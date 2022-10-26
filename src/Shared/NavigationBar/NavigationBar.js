@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import image1 from '../../assets/image1.png'
 import './NavigationBar.css'
+import ReactSwitch from 'react-switch';
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const NavigationBar = () => {
     return (
@@ -27,6 +29,7 @@ const NavigationBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
+            <div className="me-5 text-white text-decoration-none"><FaSun /> <ReactSwitch /> <FaMoon /></div>
         </Navbar>
     );
 };

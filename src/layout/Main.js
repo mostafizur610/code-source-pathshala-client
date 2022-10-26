@@ -5,7 +5,7 @@ import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='main'>
             <NavigationBar></NavigationBar>
             <Outlet></Outlet>
         </div>
