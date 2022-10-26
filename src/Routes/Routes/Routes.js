@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Blog from "../../Pages/Blog/Blog";
+import Courses from "../../Pages/Courses/Courses";
+import Home from "../../Pages/Home/Home";
 
 export const routes = createBrowserRouter([
 
@@ -7,8 +10,23 @@ export const routes = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
-
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/courses',
+                element: <Courses></Courses>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            }
         ]
+    },
+    {
+        path: '*',
+        element: <div><h1 className='d-flex justify-content-center mt-5 text-success'>404 Not Found</h1><br /><h4 className='d-flex justify-content-center text-warning'>This route is not defined</h4></div>
     }
 
 ])
