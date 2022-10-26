@@ -1,18 +1,23 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import LeftSideNav from '../../Shared/LeftSideNav/LeftSideNav';
 
 
 
 
 const Courses = () => {
-    //     <div className="me-auto">
-    //     <Link className="m-5 text-white text-decoration-none" to='/'>Home</Link>
-    //     <Link className="me-5 text-white text-decoration-none" to='/courses'>Courses</Link>
-    //     <Link className="me-5 text-white text-decoration-none" to='/faq'>FAQ</Link>
-    //     <Link className="me-5 text-white text-decoration-none" to='/blog'>Blog</Link>
-    // </div>
     return (
         <div>
-            <p>These are courses</p>
+            <Container>
+                <Row>
+                    <Col lg='2'>
+                        <LeftSideNav></LeftSideNav>
+                    </Col>
+                    <Col lg='10'>
+                        <h3>All courses</h3>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };

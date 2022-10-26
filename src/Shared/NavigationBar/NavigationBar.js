@@ -8,7 +8,7 @@ import './NavigationBar.css'
 
 const NavigationBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
             <Container>
                 <Navbar.Brand><img className='image' src={image1} alt='' /></Navbar.Brand>
                 <Navbar.Brand><Link className="me-5 fs-3 text-white text-decoration-none" to='/'>Code-Source Pathshala</Link></Navbar.Brand>
@@ -21,9 +21,9 @@ const NavigationBar = () => {
                         <Nav.Link ><Link className="me-4 text-info text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link href="#deets">Register</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                            Login
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
