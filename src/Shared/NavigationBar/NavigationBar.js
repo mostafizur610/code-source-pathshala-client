@@ -8,22 +8,21 @@ import './NavigationBar.css'
 
 const NavigationBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
+        <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
             <Container>
                 <Navbar.Brand><img className='image' src={image1} alt='' /></Navbar.Brand>
                 <Navbar.Brand><Link className="me-5 fs-3 text-white text-decoration-none" to='/'>Code-Source Pathshala</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link ><Link className="me-4 text-info text-decoration-none" to='/'>Home</Link></Nav.Link>
-                        <Nav.Link ><Link className="me-4 text-info text-decoration-none" to='/courses'>Courses</Link></Nav.Link>
-                        <Nav.Link ><Link className="me-4 text-info text-decoration-none" to='/faq'>FAQ</Link></Nav.Link>
-                        <Nav.Link ><Link className="me-4 text-info text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
+                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/'>Home</Link></Nav.Link>
+                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/courses'>Courses</Link></Nav.Link>
+                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/faq'>FAQ</Link></Nav.Link>
+                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">Register</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Login
+                        <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/register'>Register</Link></Nav.Link>
+                        <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/login'>Login</Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
