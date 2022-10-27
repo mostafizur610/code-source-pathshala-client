@@ -10,6 +10,8 @@ import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { Button, Image } from 'react-bootstrap';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -19,6 +21,12 @@ const NavigationBar = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>
+    );
 
     return (
         <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
@@ -34,16 +42,21 @@ const NavigationBar = () => {
                         <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-
-                        <Nav.Link><Link className="me-3 text-white text-decoration-none">{user?.displayName}</Link>
-                        </Nav.Link>
                         <Nav.Link><Link className="me-4 text-white text-decoration-none">
                             {
                                 user?.uid ?
                                     <>
-                                        <span className='me-4'> {user?.photoURL ?
-                                            <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <FaUser></FaUser>
-                                        }</span>
+                                        <OverlayTrigger
+                                            placement="left"
+                                            delay={{ show: 250, hide: 400 }}
+                                            overlay={renderTooltip}
+                                        >
+                                            <span className='me-4'> {user?.photoURL ?
+                                                <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <FaUser></FaUser>
+                                            }</span>
+                                        </OverlayTrigger>
+
+
                                         <Button variant='outline-light' onClick={handleLogout}>Logout</Button>
                                     </>
                                     :
