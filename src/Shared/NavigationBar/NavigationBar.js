@@ -6,9 +6,20 @@ import { Link } from 'react-router-dom';
 import image1 from '../../assets/image1.png'
 import './NavigationBar.css'
 import ReactSwitch from 'react-switch';
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun, FaUser } from "react-icons/fa";
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Button, Image } from 'react-bootstrap';
 
 const NavigationBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
             <Container>
@@ -23,8 +34,28 @@ const NavigationBar = () => {
                         <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/register'>Register</Link></Nav.Link>
-                        <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/login'>Login</Link>
+
+                        <Nav.Link><Link className="me-4 text-white text-decoration-none">{user?.displayName}</Link>
+                        </Nav.Link>
+                        <Nav.Link><Link className="me-4 text-white text-decoration-none">
+                            {
+                                user?.uid ?
+                                    <>
+                                        <span className='profile'> {user?.photoURL ?
+                                            <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <FaUser></FaUser>
+                                        }</span>
+                                        <Button variant='outline-light' onClick={handleLogout}>Logout</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <span className='d-flex mt-3'>
+                                            <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/register'>Register</Link></Nav.Link>
+                                            <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/login'>Login</Link>
+                                            </Nav.Link>
+                                        </span>
+                                    </>
+                            }
+                        </Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
