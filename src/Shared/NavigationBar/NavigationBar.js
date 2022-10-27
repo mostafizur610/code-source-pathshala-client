@@ -35,20 +35,20 @@ const NavigationBar = () => {
                     </Nav>
                     <Nav>
 
-                        <Nav.Link><Link className="me-4 text-white text-decoration-none">{user?.displayName}</Link>
+                        <Nav.Link><Link className="me-3 text-white text-decoration-none">{user?.displayName}</Link>
                         </Nav.Link>
                         <Nav.Link><Link className="me-4 text-white text-decoration-none">
                             {
                                 user?.uid ?
                                     <>
-                                        <span className='profile'> {user?.photoURL ?
+                                        <span className='me-4'> {user?.photoURL ?
                                             <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> : <FaUser></FaUser>
                                         }</span>
                                         <Button variant='outline-light' onClick={handleLogout}>Logout</Button>
                                     </>
                                     :
                                     <>
-                                        <span className='d-flex mt-3'>
+                                        <span className='d-flex mt-4'>
                                             <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/register'>Register</Link></Nav.Link>
                                             <Nav.Link><Link className="me-4 text-white text-decoration-none" to='/login'>Login</Link>
                                             </Nav.Link>
