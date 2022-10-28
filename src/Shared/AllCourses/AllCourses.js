@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const AllCourses = ({ courses }) => {
     const { title, img, details } = courses;
@@ -14,7 +15,7 @@ const AllCourses = ({ courses }) => {
                             details.length > 50 ? <p>{details.slice(0, 50) + '...'}</p> : <p>{details}</p>
                         }
                     </Card.Text>
-                    <Button variant="primary">Check Out</Button>
+                    <Link to={`/courses/${courses.id}`}><Button variant="primary">Show details</Button></Link>
                 </Card.Body>
             </Card>
         </div>
