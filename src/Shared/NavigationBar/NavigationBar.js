@@ -37,7 +37,7 @@ const NavigationBar = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/'>Home</Link></Nav.Link>
-                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/courses'>Courses</Link></Nav.Link>
+                        <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/course'>Courses</Link></Nav.Link>
                         <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/faq'>FAQ</Link></Nav.Link>
                         <Nav.Link ><Link className="me-4 text-white text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
@@ -73,7 +73,7 @@ const NavigationBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <div className="me-5 text-white text-decoration-none"><FaSun /> <ReactSwitch /> <FaMoon /></div>
+            {/* <div className="me-5 text-white text-decoration-none"><FaSun /> <ReactSwitch /> <FaMoon /></div> */}
         </Navbar>
     );
 };
