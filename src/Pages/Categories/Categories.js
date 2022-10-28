@@ -30,7 +30,8 @@ const Categories = ({ courseDetails }) => {
                     <Card.Text>
                         {details}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to='/checkout'><Button variant="primary">Get Premium Access</Button></Link>
+
                 </Card.Body>
                 <Card.Footer className="text-muted">rating: {rating}</Card.Footer>
             </Card>
