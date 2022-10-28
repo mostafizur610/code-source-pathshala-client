@@ -20,9 +20,9 @@ const Categories = ({ courseDetails }) => {
                         <Link><FaDownload /></Link>
 
                         {/* <PDFDownloadLink document={<PDFFile></PDFFile>} fileName="Form">
-                            <button>abc</button>
+                            <button></button>
                         </PDFDownloadLink>
-                        <PDFFile></PDFFile> */}
+                        <PDFFile><FaDownload /></PDFFile> */}
                     </div>
                     <Card.Img src={header_img} />
                 </Card.Header>
