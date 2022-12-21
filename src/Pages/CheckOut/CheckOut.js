@@ -31,7 +31,7 @@ const CheckOut = () => {
                                 <ListGroup.Item>
                                     {
                                         courses.map(course => <h5 key={course.id}>
-                                            <Link className='text-primary te' to={`/checkout`}>
+                                            <Link className='text-primary' to={`/checkout`}>
                                                 <div className='text-center'><Button>{course.name}</Button><Button className='ms-4 bg-info'>99$</Button></div>
                                             </Link>
                                         </h5>)

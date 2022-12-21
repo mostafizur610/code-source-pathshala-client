@@ -46,7 +46,6 @@ export const routes = createBrowserRouter([
                 path: '/checkout',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             }
-
         ]
     },
     {
