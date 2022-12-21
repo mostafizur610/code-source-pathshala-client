@@ -8,6 +8,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import img from '../../assets/notfound.gif';
 
 export const routes = createBrowserRouter([
 
@@ -50,7 +51,7 @@ export const routes = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div><h1 className='d-flex justify-content-center mt-5 text-success'>404 Not Found</h1><br /><h4 className='d-flex justify-content-center text-warning'>This route is not defined</h4></div>
+        element: <div><h1 className='d-flex justify-content-center'><img src={img} alt="" /></h1><br /><h4 className='d-flex justify-content-center text-warning'>This route is not defined</h4></div>
     }
 
 ])
